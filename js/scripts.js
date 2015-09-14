@@ -1,5 +1,9 @@
 var cryptosquare = function(userEntry) {
-
+  var strippedString = stripString(userEntry);
+  var rectangleWidth = calculateRectangleWidth(strippedString.length);
+  var rearrangedString = reconstructString(strippedString, rectangleWidth);
+  var outputString = finalString(rearrangedString);
+  return outputString;
 };
 
 var stripString = function(userEntry) {
@@ -19,10 +23,21 @@ var reconstructString = function(string, number) {
       newArray.push(stringArray[i]);
     }
   }
-  return newArray;
-  //return newArray.toString().replace(/,/g, "");
+  return newArray.toString().replace(/,/g, "");
 }
 
+var finalString = function(string) {
+  var newString = "";
+  for (var i = 0; i < string.length; i += 5) {
+    if (i > string.length - 5) {
+      newString = newString.concat(string.substring(i));
+    } else {
+      newString = newString.concat(string.substring(i, i + 5));
+      newString = newString.concat(" ");
+    }
+  }
+  return newString;
+}
 
 // $(document).ready(function() {
 //
