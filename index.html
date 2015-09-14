@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Cryptosquare</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cryptosquare</h1>
+
+      <div class="form">
+        <form id="message">
+          <div class="form-group">
+            <label for="input">Enter a message to encrypt</label>
+            <input id="input" type="text">
+          </div>
+
+          <button type="submit" class="btn">Get secret message!</button>
+        </form>
+      </div>
+
+      <div id="result">
+        <p>Your secret message: <span class="cryptosquare"></span></p>
+        <p class="clickable">See your original message!</p>
+      </div>
+
+    </div>
+  </body>
+</html>

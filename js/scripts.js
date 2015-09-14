@@ -39,6 +39,20 @@ var finalString = function(string) {
   return newString;
 }
 
-// $(document).ready(function() {
-//
-// });
+$(document).ready(function() {
+  var inputMessage;
+  $("form#message").submit(function(event) {
+    inputMessage = $("input#input").val();
+    var outputMessage = cryptosquare(inputMessage);
+
+    $(".cryptosquare").text(outputMessage);
+
+    $("#result").show();
+    $(".form").hide();
+    event.preventDefault();
+  });
+
+  $(".clickable").click(function() {
+    alert(inputMessage);
+  });
+});
